@@ -1,10 +1,4 @@
-/*
-let valorHora;
-let carroTipo;
-let horas;
-let descuento;
-let valorInicial;
-let valorTotal;*/
+
 
 
 document.getElementById("montos").style.display = "none";
@@ -19,10 +13,12 @@ function calcular() {
     valor= valorService(horas);
     descuento = porcentaje(tipo, valor);
     total= valor- descuento;
-
+    reloj= time()
+  
     document.getElementById("valor").value = valor;
     document.getElementById("descuento").value = descuento;
     document.getElementById("total").value = total;
+    document.getElementById("watch").value = reloj;
 
     document.getElementById("montos").style.display = "block";
     document.getElementById("btnPrint").style.display = "block";
@@ -63,4 +59,27 @@ function porcentaje(tipo, valor) {
             break;
     }
     return descuento;
+}
+
+function time(){
+  tiempoActual= new Date();
+  day= tiempoActual.getDay();
+  month= tiempoActual.getMonth();
+  year= tiempoActual.getFullYear();
+  hour= tiempoActual.getHours();
+  minute= tiempoActual.getMinutes();
+  second= tiempoActual.getSeconds();
+  
+    showDate= day + "/" + month + "/" + year;
+    //alert(tiempoActual);
+    //alert(showDate);
+    //alert(day);
+  showTime= hour + ":" + minute + ":" + second;
+
+  return showTime;
+}
+
+function ingreso(){
+    reloj= time()
+    document.getElementById("inTime").value = reloj;
 }

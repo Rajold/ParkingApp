@@ -9,8 +9,13 @@
 </head>
 
 <header class="bg-danger">
-    <div class="d-flex justify-content-center p-2">
-        <span class="p-3 text-light h2">Sistema de Parqueadero</span>
+    <div class="row" >
+        <div class= "col-11 d-flex justify-content-center p-2" >
+            <span class="p-3 text-light h2">Sistema de Parqueadero</span>
+        </div>
+        <div class="col-1">
+            <input type="text" id="watch" readonly >
+        </div>
     </div>
 </header>
 
@@ -29,11 +34,15 @@
             </div>
 
             <div class="row">
-                <div class="col-5">
+                <div class="col-4">
+                    <label for="inTime"><strong>Hora de entrada</strong></label>
+                    <input type="text" class="form-control shadow-sm" id="inTime" readonly>
+                </div>
+                <div class="col-4">
                     <label for="placa"><strong>Placa</strong></label>
                     <input type="text" class="form-control shadow-sm" id="placa" placeholder="ABC00A" required>
                 </div>
-                <div class="col-7">
+                <div class="col-4">
                     <label for="tipo"><strong>Tipo de vehículo</strong></label>
                     <select class="form-control shadow-sm" id="tipo" required>
                         <option >Moto</option>
@@ -76,6 +85,7 @@
             </div>
 
             <div class="d-flex justify-content-center container my-5" >
+                <button class="btn-dark" type="button" id="btnIn" onclick= ingreso() >Ingresar</button>
                 <button class="btn btn-primary" type="button" id="btnCal" onclick= calcular() >Calcular</button>
                 <button class="btn btn-dark ms-1" type="button" id="btnPrint" onclick="window.print()">Imprimir</button>
 
