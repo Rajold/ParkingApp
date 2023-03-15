@@ -1,29 +1,33 @@
+/*
 let valorHora;
-let tipoVeih;
+let carroTipo;
 let horas;
 let descuento;
 let valorInicial;
-let valorFinal;
+let valorTotal;*/
 
 
-//document.getElementById("montos").style.display = "none";
+document.getElementById("montos").style.display = "none";
 document.getElementById("btnPrint").style.display = "none";
+document.getElementById("propietario").style.display = "none";
+document.getElementById("modelo").style.display = "none";
 
 function calcular() { 
-    horas = Number(document.getElementById("fin").value);
-    tipo = (document.getElementById("tipo").value).tolowerCase();
-    
+    horas = Number(document.getElementById("salida").value);
+    tipo = (document.getElementById("tipo").value).toLowerCase();
 
-    valor = valorService(horas);
+    valor= valorService(horas);
     descuento = porcentaje(tipo, valor);
-    valorFinal= valor- descuento;
+    total= valor- descuento;
 
     document.getElementById("valor").value = valor;
     document.getElementById("descuento").value = descuento;
-    document.getElementById("total").valor = valorFinal;
+    document.getElementById("total").value = total;
 
-    document.getElement("montos").style.display = "block";
-    document.getElement("btnPrint").style.display= "block";
+    document.getElementById("montos").style.display = "block";
+    document.getElementById("btnPrint").style.display = "block";
+    //document.getElementById("propietario").style.display = "block";
+    //document.getElementById("modelo").style.display = "block";
 }
 
 function valorService(hours) {
@@ -51,6 +55,9 @@ function porcentaje(tipo, valor) {
             break;
         case "moto":
             descuento = valor * 0.15;
+            break;
+        case "bicicleta":
+            descuento = valor * 0.20;
             break;
         default:
             break;

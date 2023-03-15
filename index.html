@@ -15,11 +15,11 @@
 </header>
 
 <body> 
-    <div class="container mt-5">
+    <div class="container mt-5" >
         <form class="w-50 mx-auto">
-            <div class="form-group">
+            <div class="form-group" id="propietario" >
                 <label for="propietario">
-                    <strong>Propietario de la nave</strong>
+                    <strong>Propietario del vehículo</strong>
                 </label>
                 <input type="text" class="form-control shadow-sm" id="propietario" placeholder="Propietario del vehículo" required>
             </div>
@@ -31,13 +31,14 @@
             <div class="row">
                 <div class="col-5">
                     <label for="placa"><strong>Placa</strong></label>
-                    <input type="text" class="form-control shadow-sm" id="placa" placeholder="Placa del vehículo" required>
+                    <input type="text" class="form-control shadow-sm" id="placa" placeholder="ABC00A" required>
                 </div>
                 <div class="col-7">
                     <label for="tipo"><strong>Tipo de vehículo</strong></label>
-                    <select type="text" class="form-control shadow-sm" id="tipo" required>
-                        <option >Carro</option>
+                    <select class="form-control shadow-sm" id="tipo" required>
                         <option >Moto</option>
+                        <option >Carro</option>
+                        <option >Bicicleta</option>
                     </select>
                 </div>
             </div>
@@ -53,7 +54,7 @@
                 </div>
                 <div class="col-4">
                     <label for="fin"><strong>Hora de salida</strong></label>
-                    <input type="datetime" class="form-control shadow-sm" id="fin" placeholder="HH:MM" required>
+                    <input type="datetime" class="form-control shadow-sm" id="salida" placeholder="HH:MM" required>
                 </div>
             </div>
 
